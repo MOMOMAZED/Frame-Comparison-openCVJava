@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="775.0" prefWidth="1289.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ProjectIRController">
+   <center>
+      <ImageView fx:id="currentFrame" fitHeight="530.0" fitWidth="679.0" pickOnBounds="true" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </ImageView>
+   </center>
+   <left>
+      <VBox prefHeight="483.0" prefWidth="207.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="fps_label" prefHeight="29.0" prefWidth="221.0" text="[]">
+               <font>
+                  <Font name="MV Boli" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="greyscale_label" prefHeight="29.0" prefWidth="219.0" text="[]">
+               <font>
+                  <Font name="MV Boli" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="invert_label" prefHeight="29.0" prefWidth="222.0" text="[]">
+               <font>
+                  <Font name="MV Boli" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </left>
+   <top>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <CheckBox fx:id="show_fps" mnemonicParsing="false" onAction="#showFPS" text="Show FPS">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="grey_scale" mnemonicParsing="false" onAction="#greyScale" text="Grey Scale">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="invert_camera" mnemonicParsing="false" onAction="#invertCamera" text="Invert Camera">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </CheckBox>
+            <TextField fx:id="file_path" editable="false" onAction="#updateFindImage" prefHeight="30.0" prefWidth="832.0" promptText="Image Address" />
+            <Button fx:id="image_load" mnemonicParsing="false" onAction="#loadImage" prefHeight="29.0" prefWidth="110.0" text="Upload Image" />
+         </children>
+      </HBox>
+   </top>
+   <bottom>
+      <VBox prefHeight="72.0" prefWidth="636.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="start_btn" defaultButton="true" mnemonicParsing="false" onAction="#startCamera" prefHeight="36.0" prefWidth="112.0" text="Start Camera" textFill="#000701">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="screenshot_btn" defaultButton="true" mnemonicParsing="false" onAction="#takePhoto" prefHeight="36.0" prefWidth="112.0" text="Take Picture">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </bottom>
+   <right>
+      <VBox prefHeight="603.0" prefWidth="370.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="37.0" prefWidth="300.0" text="Find Picture:">
+               <font>
+                  <Font name="MV Boli" size="24.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="find_image" fitHeight="177.0" fitWidth="177.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../download.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+   </right>
+</BorderPane>
